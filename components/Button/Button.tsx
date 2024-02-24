@@ -1,5 +1,5 @@
 import { combineClasses } from "@/utils/combine";
-import React from "react";
+import React, { useRef } from "react";
 import { GestureResponderEvent, TouchableOpacity } from "react-native"
 
 export interface ButtonProps {
@@ -32,7 +32,7 @@ const Button = (props: ButtonProps) => {
     const {styling,children,variant,size,onPress} = props
     const variantClass = variant ? variantClasses[variant]: variantClasses['default']
     const sizeClass = size ? sizeClasses[size]: sizeClasses['default']
-
+    
     return (
         <>
             <TouchableOpacity
