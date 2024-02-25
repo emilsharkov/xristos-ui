@@ -3,6 +3,7 @@ import Card from '@/components/Card/Card';
 import Dialog from '@/components/Dialog/Dialog';
 import Progress from '@/components/Progress/Progress';
 import Slider from '@/components/Slider/Slider';
+import Spinner from '@/components/Spinner/Spinner';
 import React, { useEffect, useState } from 'react';
 import { Text, View } from 'react-native';
 
@@ -22,6 +23,7 @@ export default function App() {
       {/* <Progress progress={80}/> */}
       <View className='w-[90%]'>
         <Slider />
+        <Spinner/>
       </View>
     </View>
   );

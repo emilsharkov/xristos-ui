@@ -1,1 +1,43 @@
-# prost-ui
+# Prost-UI
+This is a collection of reusable react native components built with nativewind. This is not a component library but instead code that you copy paste into your own apps so that you can customize and make your own component library.
+
+## Components
+- Accordian: Incomplete
+- Bread Crumb: Incomplete
+- Button: Done
+- Button Group: Incomplete
+- Calendar: Incomplete
+- Card: Done
+- Carousel: Incomplete
+- Chat Bubble: Incomplete
+- Code Block: Incomplete
+- Collapsible: Incomplete
+- Context Menu: Incomplete
+- Date Picker: Incomplete
+- Device Mockup: Incomplete
+- Dialog: Done
+- Drawer: Incomplete
+- Dropdown: Incomplete
+- Form: Incomplete
+- Typography: Incomplete
+- Graphs: Incomplete
+- Input: Incomplete
+- Masonry Gallery: Incomplete
+- Navbar: Incomplete
+- Navbar Dropdown: Incomplete
+- Popover: Incomplete
+- Progress: Done
+- Stepper: Incomplete
+- Radio: Incomplete
+- Rating: Incomplete
+- Sidebar: Incomplete
+- Skeleton: Incomplete
+- Slider: Done
+- Speed Dial: Incomplete
+- Spinner: Done
+- Switch: Incomplete
+- Table: Incomplete
+- Tabs: Incomplete
+- Timeline: Incomplete
+- Toast: Incomplete
+- Toggle: Incomplete
