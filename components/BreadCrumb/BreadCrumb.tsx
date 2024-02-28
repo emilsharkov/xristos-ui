@@ -5,7 +5,7 @@ import Arrow from '@/components/BreadCrumb/arrow.svg'
 
 
 export interface BreadCrumbProps {
-    children: React.ReactElement<BreadCrumbRouteProps>[] | React.ReactElement<BreadCrumbRouteProps>
+    children?: React.ReactElement<BreadCrumbRouteProps>[] | React.ReactElement<BreadCrumbRouteProps>
 }
 
 const BreadCrumb = (props: BreadCrumbProps) => {

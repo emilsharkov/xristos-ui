@@ -3,7 +3,7 @@ import { AccordianItemProps } from "./AccordianItem"
 import { Children, Fragment } from "react"
 
 export interface AccordianProps {
-    children: React.ReactElement<AccordianItemProps>[] | React.ReactElement<AccordianItemProps>
+    children?: React.ReactElement<AccordianItemProps>[] | React.ReactElement<AccordianItemProps>
 }
 
 const Accordian = (props: AccordianProps) => {

@@ -1,7 +1,7 @@
 import { View } from "react-native";
 
 export interface AccordianContentProps {
-    children: React.ReactNode;
+    children?: React.ReactNode;
 }
 
 const AccordianContent = (props: AccordianContentProps) => {

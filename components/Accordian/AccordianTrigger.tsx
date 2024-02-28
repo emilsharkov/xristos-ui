@@ -1,7 +1,7 @@
 import { TouchableOpacity, Text, View } from "react-native"
 
 export interface AccordianTriggerProps {
-    children: React.ReactNode;
+    children?: React.ReactNode;
 }
 
 const AccordianTrigger = (props: AccordianTriggerProps) => {

@@ -4,7 +4,7 @@ import { ButtonGroupItemProps } from "./ButtonGroupItem";
 
 
 export interface ButtonGroupProps {
-    children: React.ReactElement<ButtonGroupItemProps>[] | React.ReactElement<ButtonGroupItemProps>
+    children?: React.ReactElement<ButtonGroupItemProps>[] | React.ReactElement<ButtonGroupItemProps>
 }
 
 const ButtonGroup = (props: ButtonGroupProps) => {
@@ -16,10 +16,10 @@ const ButtonGroup = (props: ButtonGroupProps) => {
         >
             {Children.map(children, (child, index) => (
                 <Fragment key={index}>
-                    {cloneElement(child,{
+                    {child ? cloneElement(child,{
                         isFirst: index === 0,
                         isLast: index === Children.count(children) - 1,
-                    })}
+                    }): null}
                 </Fragment>
             ))}
         </View>
