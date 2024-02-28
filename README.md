@@ -3,9 +3,9 @@ This is a collection of reusable react native components built with nativewind. 
 
 ## Components
 - Accordian: Done
-- Bread Crumb: Incomplete
+- Bread Crumb: Complete
 - Button: Done
-- Button Group: Incomplete
+- Button Group: Complete
 - Calendar: Incomplete
 - Card: Done
 - Carousel: Incomplete
