@@ -7,9 +7,13 @@ export default function App() {
     <View className="flex-1 items-center justify-center bg-[#fafafa]">
       <View className='w-[90%]'>
         <DeviceMockup
-          type='android'
+          type='laptop'
+          size='md'
         >
-          
+          <Image 
+            src="https://flowbite.s3.amazonaws.com/docs/device-mockups/laptop-screen.png" 
+            className=" h-[156px] w-full rounded-xl"
+          />
         </DeviceMockup>
       </View>
     </View>

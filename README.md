@@ -14,7 +14,7 @@ This is a collection of reusable react native components built with nativewind. 
 - Collapsible: Incomplete
 - Context Menu: Incomplete
 - Date Picker: Incomplete
-- Device Mockup: Incomplete
+- Device Mockup: Done
 - Dialog: Done
 - Drawer: Incomplete
 - Dropdown: Incomplete
