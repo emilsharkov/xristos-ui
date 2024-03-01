@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Text, View, Image } from 'react-native';
 import DeviceMockup from '@/components/DeviceMockup/DeviceMockup';
-// import "../styles.css";
 
 
 export default function App() {
@@ -9,7 +8,7 @@ export default function App() {
     <View className="flex-1 items-center justify-center bg-[#fafafa]">
       <View className='w-[90%]'>
         <DeviceMockup
-          type='default'
+          type='android'
           size='md'
         >
           <Image 

@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import AndroidMockup from "./AndroidMockup";
 import DefaultMockup from "./DefaultMockup";
 import DesktopMockup from "./DesktopMockup";
