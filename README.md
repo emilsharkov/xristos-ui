@@ -7,7 +7,7 @@ This is a collection of reusable react native components built with nativewind. 
 - Button: Done
 - Button Group: Done
 - Calendar: Incomplete
-- Card: Done
+- Card: Incomplete
 - Carousel: Incomplete
 - Chat Bubble: Incomplete
 - Code Block: Incomplete
@@ -22,6 +22,7 @@ This is a collection of reusable react native components built with nativewind. 
 - Typography: Incomplete
 - Graphs: Incomplete
 - Input: Incomplete
+- Map: Incomplete
 - Masonry Gallery: Incomplete
 - Navbar: Incomplete
 - Navbar Dropdown: Incomplete
@@ -34,7 +35,7 @@ This is a collection of reusable react native components built with nativewind. 
 - Skeleton: Incomplete
 - Slider: Done
 - Speed Dial: Incomplete
-- Spinner: Done
+- Spinner: Incomplete
 - Switch: Incomplete
 - Table: Incomplete
 - Tabs: Incomplete

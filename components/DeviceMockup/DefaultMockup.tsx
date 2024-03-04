@@ -6,7 +6,7 @@ export interface DefaultMockupProps {
 }
 
 const DefaultMockup = (props: DefaultMockupProps) => {
-    const { children } = props;
+    const { children } = props
     return (
         <View className="relative mx-auto border-[#444] bg-[#444] border-[14px] rounded-[40px] h-[600px] w-[300px]">
             <View className="absolute h-[32px] w-[3px] bg-[#444] rounded-[16px] top-[72px] left-[-17px]" />

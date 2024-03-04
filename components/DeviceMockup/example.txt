@@ -2,8 +2,8 @@
     type='laptop'
     size='md'
 >
-    <Image 
-        src="https://flowbite.s3.amazonaws.com/docs/device-mockups/laptop-screen.png" 
+    <Image
+        source={{ uri: "https://flowbite.s3.amazonaws.com/docs/device-mockups/laptop-screen.png"}}
         className=" h-[156px] w-full rounded-xl"
     />
 </DeviceMockup>

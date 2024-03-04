@@ -1,22 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Text, View, Image } from 'react-native';
 import DeviceMockup from '@/components/DeviceMockup/DeviceMockup';
-// import "../styles.css";
-
+import Calendar from '@/components/Calendar/Calendar';
 
 export default function App() {
   return (
     <View className="flex-1 items-center justify-center bg-[#fafafa]">
-      <View className='w-[90%]'>
-        <DeviceMockup
-          type='default'
-          size='md'
-        >
-          <Image 
-            src="https://flowbite.s3.amazonaws.com/docs/device-mockups/laptop-screen.png" 
-            className=" h-[156px] w-full rounded-xl"
-          />
-        </DeviceMockup>
+      <View className='w-[30%]'>
+        <Calendar
+          mode='range'
+          defaultDate={new Date()}
+        />
       </View>
     </View>
   )
