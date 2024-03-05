@@ -1,6 +1,5 @@
 import { View,Text, TouchableOpacity } from "react-native"
 import { isSameDate } from "./CalendarUtils";
-import { Fragment } from "react";
 
 export interface CalendarRowProps {
     selectedDates: Date[];
@@ -12,7 +11,6 @@ export interface CalendarRowProps {
 
 const CalendarRow = (props: CalendarRowProps) => {
     const {selectedDates,calendarWeek,currentMonthDate,onPress} = props
-    console.log(selectedDates)
     
     const dayTextStyle = (date: Date) => {
         return currentMonthDate.getMonth() != date.getMonth() ? '!text-gray-300': ''
@@ -63,13 +61,13 @@ const CalendarRow = (props: CalendarRowProps) => {
                 return <>
                     <View
                         key={day.toISOString() + index} 
-                        className={`${selectedCellStyle(day)} ${todayCellStyle(day)} aspect-square flex-1`}
+                        className={`${selectedCellStyle(day)} ${todayCellStyle(day)} flex-1 flex flex-row`}
                     >
                         <TouchableOpacity
-                            className="w-full aspect-square flex items-center justify-center"
+                            className="w-full aspect-square items-center justify-center"
                             onPress={() => onPress(day)}
                         >
-                            <Text className={`${selectedTextStyle(day)} ${dayTextStyle(day)} text-center`}>
+                            <Text className={`${selectedTextStyle(day)} ${dayTextStyle(day)} text-center text-md font-normal`}>
                                 {day.getDate()}
                             </Text>
                         </TouchableOpacity>

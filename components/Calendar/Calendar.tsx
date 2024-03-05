@@ -1,8 +1,11 @@
-import { View,Text } from "react-native"
+import { View,Text, TouchableOpacity } from "react-native"
 import { daysOfWeek, getCalendarWeeks, isSameDate } from "./CalendarUtils"
 import CalendarRow from "./CalendarRow"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import MonthPicker from "./MonthPicker"
+import ChevronDown from './chevron-down.svg'
+import ChevronUp from './chevron-up.svg'
+import YearPicker from "./YearPicker"
 
 export interface CalendarProps {
     mode?: 'single' | 'range';
@@ -14,8 +17,17 @@ const Calendar = (props: CalendarProps) => {
     const {mode,defaultDate,onSelect} = props
     const [currentMonthDate,setCurrentMonthDate] = useState<Date>(new Date(defaultDate.getFullYear(),defaultDate.getMonth()))
     const [selectedDates,setSelectedDates] = useState<Date[]>([])
+    const [showYears,setShowYears] = useState<boolean>(false)
+
+    const YearsChevron = showYears ? ChevronUp: ChevronDown
     const calendarWeeks = getCalendarWeeks(currentMonthDate)
     const calendarHeading = currentMonthDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
+
+    useEffect(() => {
+        if(onSelect) {
+            onSelect(selectedDates)
+        }
+    },[selectedDates])
 
     const onPress = (date: Date) => {
         if(selectedDates.length === 0) {
@@ -35,7 +47,7 @@ const Calendar = (props: CalendarProps) => {
         } else if(selectedDates.length === 2) {
             setSelectedDates([])
         } else {
-            // throw new Error('This should only have up to 2 items')
+            throw new Error('This should only have up to 2 items')
         }
     }
 
@@ -47,42 +59,63 @@ const Calendar = (props: CalendarProps) => {
                     currentMonthDate={currentMonthDate}
                     setCurrentMonthDate={setCurrentMonthDate}
                 />
-                <View className="flex-1 self-center">
-                    <Text className="text-center">{calendarHeading}</Text>
+                <View className="flex-1 justify-center items-center">
+                    <TouchableOpacity 
+                        className="w-max flex-row items-center justify-center"
+                        onPress={() => setShowYears(!showYears)}
+                    >
+                        <Text className="text-center text-base font-medium relative">
+                            {calendarHeading}
+                        </Text>
+                        <YearsChevron className="w-4 h-4 text-black relative left-1.5"/>
+                    </TouchableOpacity>
                 </View>
+                
                 <MonthPicker
                     month="next"
                     currentMonthDate={currentMonthDate}
                     setCurrentMonthDate={setCurrentMonthDate}
                 />
             </View>
-            <View className="w-full flex flex-row">
-                {daysOfWeek.map((day: string, index: number) => {
-                    return <>
-                        <View key={day} className="aspect-square flex-1 flex items-center justify-center rounded">
-                            <Text className="text-center text-gray-500">
-                                {day.slice(0,2)}
-                            </Text>
-                        </View>
-                    </>
-                })}
-            </View>
-            <View className="w-full flex flex-col">
-                {calendarWeeks.map((calendarWeek: Date[], index: number) => {
-                    return (
-                        <View className="py-[0.75]">
-                            <CalendarRow
-                                key={calendarWeek[0].toISOString()}
-                                selectedDates={selectedDates}
-                                calendarWeek={calendarWeek}
-                                currentMonthDate={currentMonthDate}
-                                onSelect={onSelect}
-                                onPress={onPress}
-                            />
-                        </View>
-                    )
-                })}
-            </View>
+            {showYears ? (
+                    <View className="w-full aspect-square">
+                        <YearPicker
+                            setShowYears={setShowYears}
+                            currentMonthDate={currentMonthDate}
+                            setCurrentMonthDate={setCurrentMonthDate}
+                        />
+                    </View>
+                ): (
+                <>
+                    <View className="w-full flex flex-row">
+                        {daysOfWeek.map((day: string, index: number) => {
+                            return <>
+                                <View key={day} className="aspect-square flex-1 flex items-center justify-center rounded">
+                                    <Text className="text-center text-gray-500">
+                                        {day.slice(0,2)}
+                                    </Text>
+                                </View>
+                            </>
+                        })}
+                    </View>
+                    <View className="w-full flex flex-col">
+                        {calendarWeeks.map((calendarWeek: Date[], index: number) => {
+                            return (
+                                <View className="py-[0.75]">
+                                    <CalendarRow
+                                        key={calendarWeek[0].toISOString()}
+                                        selectedDates={selectedDates}
+                                        calendarWeek={calendarWeek}
+                                        currentMonthDate={currentMonthDate}
+                                        onSelect={onSelect}
+                                        onPress={onPress}
+                                    />
+                                </View>
+                            )
+                        })}
+                    </View>
+                </>
+            )}
         </View>
     )
 }

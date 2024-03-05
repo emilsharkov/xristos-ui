@@ -6,7 +6,7 @@ import Calendar from '@/components/Calendar/Calendar';
 export default function App() {
   return (
     <View className="flex-1 items-center justify-center bg-[#fafafa]">
-      <View className='w-[30%]'>
+      <View className='w-[60%]'>
         <Calendar
           mode='range'
           defaultDate={new Date()}

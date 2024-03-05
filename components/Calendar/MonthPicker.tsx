@@ -16,7 +16,7 @@ const MonthPicker = (props: MonthPickerProps) => {
 
     return(
         <Button
-            styling='w-[15%] p-2'
+            styling='w-[12%] !h-auto !aspect-square !p-1'
             onPress={() => setCurrentMonthDate(addMonths(currentMonthDate,monthAdjustment))}
         >
             <Icon className='w-full aspect-square text-white'/>

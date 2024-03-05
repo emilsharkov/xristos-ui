@@ -35,4 +35,12 @@ const getCalendarWeeks = (date: Date) => {
     return weeks
 }
 
-export {isSameDate,daysOfWeek,getCalendarWeeks}
+const createYearsList = (start: number, end: number) => {
+  let result = []
+  for (let i = end; i >= start; i--) {
+      result.push(i)
+  }
+  return result
+}
+
+export {isSameDate,daysOfWeek,getCalendarWeeks,createYearsList}
