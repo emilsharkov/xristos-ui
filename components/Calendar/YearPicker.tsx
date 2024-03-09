@@ -2,18 +2,18 @@ import { ScrollView, View, Text, TouchableOpacity, FlatList } from "react-native
 import { createYearsList } from "./CalendarUtils";
 
 export interface YearPickerProps {
+    yearRange?: number[];
     currentMonthDate: Date;
     setCurrentMonthDate: (date: Date) => void;
     setShowYears: (bool: boolean) => void;
-    start?: number;
-    end?: number;
 }
 
 const YearPicker = (props: YearPickerProps) => {
-    const {currentMonthDate,setCurrentMonthDate,setShowYears,start,end} = props
+    const {yearRange,currentMonthDate,setCurrentMonthDate,setShowYears} = props
     const currentYear = (new Date()).getFullYear()
-    const yearsList = start && end && start < end ? createYearsList(start,end): createYearsList(1900,currentYear)
-    
+    const yearsList = yearRange && yearRange.length === 2 && yearRange[0] < yearRange[1] 
+        ? createYearsList(yearRange[0], yearRange[1])
+        : createYearsList(1900, currentYear);
 
     const pressYear = (year: number) => {
         const newCurrentMonthDate = new Date(year,currentMonthDate.getMonth())
@@ -25,7 +25,7 @@ const YearPicker = (props: YearPickerProps) => {
         <FlatList
             className="pt-1"
             data={yearsList}
-            renderItem={({item}) => {
+            renderItem={({item,index}) => {
                 return <>
                     <TouchableOpacity
                         key={item}
@@ -35,9 +35,7 @@ const YearPicker = (props: YearPickerProps) => {
                         <Text className="relative w-1/2 text-center text-lg">
                             {item}
                         </Text>
-                        <View
-                            className="absolute bottom-0 w-1/2 bg-black h-[0.5px]"
-                        />
+                        {index !== yearsList.length - 1 ? <View className="absolute bottom-0 w-1/2 bg-black h-[0.5px]"/>: null}                    
                     </TouchableOpacity>
                 </>
             }}

@@ -3,18 +3,19 @@ import { daysOfWeek, getCalendarWeeks, isSameDate } from "./CalendarUtils"
 import CalendarRow from "./CalendarRow"
 import { useEffect, useState } from "react"
 import MonthPicker from "./MonthPicker"
-import ChevronDown from './chevron-down.svg'
-import ChevronUp from './chevron-up.svg'
+import ChevronDown from './icons/chevron-down.svg'
+import ChevronUp from './icons/chevron-up.svg'
 import YearPicker from "./YearPicker"
 
 export interface CalendarProps {
-    mode?: 'single' | 'range';
     defaultDate: Date;
+    mode: 'single' | 'range';
     onSelect?: (dates: Date[]) => void;
+    yearRange?: number[]
 }
 
 const Calendar = (props: CalendarProps) => {
-    const {mode,defaultDate,onSelect} = props
+    const {mode,defaultDate,onSelect,yearRange} = props
     const [currentMonthDate,setCurrentMonthDate] = useState<Date>(new Date(defaultDate.getFullYear(),defaultDate.getMonth()))
     const [selectedDates,setSelectedDates] = useState<Date[]>([])
     const [showYears,setShowYears] = useState<boolean>(false)
@@ -59,6 +60,7 @@ const Calendar = (props: CalendarProps) => {
                     currentMonthDate={currentMonthDate}
                     setCurrentMonthDate={setCurrentMonthDate}
                 />
+
                 <View className="flex-1 justify-center items-center">
                     <TouchableOpacity 
                         className="w-max flex-row items-center justify-center"
@@ -77,9 +79,11 @@ const Calendar = (props: CalendarProps) => {
                     setCurrentMonthDate={setCurrentMonthDate}
                 />
             </View>
+            
             {showYears ? (
                     <View className="w-full aspect-square">
                         <YearPicker
+                            yearRange={yearRange}
                             setShowYears={setShowYears}
                             currentMonthDate={currentMonthDate}
                             setCurrentMonthDate={setCurrentMonthDate}

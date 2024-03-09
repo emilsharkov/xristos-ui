@@ -1,0 +1,1 @@
+// https://www.geeksforgeeks.org/how-to-implement-drag-and-drop-functionality-in-react-native/

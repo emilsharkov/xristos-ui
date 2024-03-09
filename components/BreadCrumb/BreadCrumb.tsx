@@ -1,7 +1,7 @@
-import { Children, Fragment, isValidElement } from "react";
-import BreadCrumbRoute, { BreadCrumbRouteProps } from "./BreadCrumbRoute";
-import { View,Text } from "react-native";
-import Arrow from '@/components/BreadCrumb/arrow.svg'
+import { Children, Fragment } from "react";
+import { BreadCrumbRouteProps } from "./BreadCrumbRoute";
+import { View } from "react-native";
+import Arrow from './icons/arrow.svg'
 
 
 export interface BreadCrumbProps {

@@ -1,5 +1,5 @@
-import ChevronRight from './chevron-right.svg'
-import ChevronLeft from './chevron-left.svg'
+import ChevronRight from './icons/chevron-right.svg'
+import ChevronLeft from './icons/chevron-left.svg'
 import Button from '../Button/Button';
 import { addMonths } from 'date-fns';
 
