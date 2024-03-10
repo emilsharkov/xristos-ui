@@ -13,19 +13,19 @@ export default function App() {
       
       <View className="flex-1 items-center justify-center bg-[#fafafa]">
         <View className='w-[60%]'>
-          <Popover>
+          <Popover position='bottom'>
             <PopoverTrigger>
               <Button variant='outline'>
                 <Text>Bello</Text>
               </Button>
             </PopoverTrigger>
-            <PopoverContent position='top'>
-              <Text>Popover Content</Text>
-              {/* <Calendar
-                  yearRange={[2000,2020]}
+            <PopoverContent >
+              {/* <Text>Popover Content</Text> */}
+              <Calendar
+                  yearRange={[2000,2024]}
                   mode='range'
                   defaultDate={new Date()}
-              /> */}
+              />
             </PopoverContent>
           </Popover>
         </View>

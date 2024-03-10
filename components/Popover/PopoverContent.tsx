@@ -1,12 +1,11 @@
 import { View } from "react-native"
 
 export interface PopoverContentProps {
-    position: 'top' | 'bottom' | 'left' | 'right';
     children?: React.ReactNode;
 }
 
 const PopoverContent = (props: PopoverContentProps) => {
-    const {position,children} = props
+    const {children} = props
 
     return (
         <>{children}</>
