@@ -1,4 +1,3 @@
-import { combineClasses } from "@/utils/combine";
 import React from "react";
 import { View,Text, GestureResponderEvent, TouchableOpacity } from "react-native"
 
@@ -12,10 +11,11 @@ const Card = (props: CardProps) => {
     const {styling,children,onPress} = props
 
     return (
-        <TouchableOpacity onPress={onPress}>
-            <View className={combineClasses(styling,'max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700')}>
-                {children}
-            </View>
+        <TouchableOpacity 
+            onPress={onPress}
+            className={'block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100'}
+        >
+            {children}
         </TouchableOpacity>
     )
 }

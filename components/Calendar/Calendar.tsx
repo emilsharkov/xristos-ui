@@ -8,15 +8,16 @@ import ChevronUp from './icons/chevron-up.svg'
 import YearPicker from "./YearPicker"
 
 export interface CalendarProps {
-    defaultDate: Date;
     mode: 'single' | 'range';
+    defaultDate?: Date;
     onSelect?: (dates: Date[]) => void;
     yearRange?: number[]
 }
 
 const Calendar = (props: CalendarProps) => {
     const {mode,defaultDate,onSelect,yearRange} = props
-    const [currentMonthDate,setCurrentMonthDate] = useState<Date>(new Date(defaultDate.getFullYear(),defaultDate.getMonth()))
+    const date = defaultDate ?? new Date()
+    const [currentMonthDate,setCurrentMonthDate] = useState<Date>(new Date(date.getFullYear(),date.getMonth()))
     const [selectedDates,setSelectedDates] = useState<Date[]>([])
     const [showYears,setShowYears] = useState<boolean>(false)
 

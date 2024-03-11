@@ -13,7 +13,7 @@ const BreadCrumb = (props: BreadCrumbProps) => {
 
     return (
         <View
-            className={`flex flex-row`}
+            className={`flex flex-row w-screen`}
         >
             {Children.map(children, (child, index) => (
                 <Fragment key={index}>

@@ -9,6 +9,8 @@ export interface DialogProps {
     children?: React.ReactNode; 
 }
 
+// https://stackoverflow.com/questions/40483034/close-react-native-modal-by-clicking-on-overlay
+
 const Dialog = (props: DialogProps) => {
     const {children,styling,open,setOpen} = props
 
