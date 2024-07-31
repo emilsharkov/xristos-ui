@@ -1,4 +1,4 @@
-# prost-ui
+# xristos-ui
 This is a collection of reusable react native components built with nativewind. This is not a component library but instead code that you copy paste into your own apps so that you can customize and make your own component library.
 
 ## Components
